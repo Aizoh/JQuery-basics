@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<!--jquery property is used to return the jQuery version number.
+$().jquery
+-->
+<head>
+	<style>
+		h1 {
+			color: green;
+		}
+	</style>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+	<script>
+		$(document).ready(function () {
+
+			$("button").on(
+				"click", function () {
+					let cu_version = $().jquery;
+
+					alert("The running jQuery version is: "
+						+ cu_version);
+				});
+		});
+	</script>
+</head>
+
+<body>
+	<center>
+		<h1>Geeks for Geeks</h1>
+		<button>
+			Check
+		</button>
+	</center>
+</body>
+
+</html>

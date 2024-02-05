@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"> 
+	</script> 
+	<script> 
+		function changeSize() { 
+			$(this).animate({ 
+				fontSize: "+=3px" 
+			}); 
+		} 
+
+		function changeSpacing() { 
+			$(this).animate({ 
+				letterSpacing: "+=2px" 
+			}); 
+		} 
+
+		$(document).ready(function() { 
+			$("h1").live("click", changeSize); 
+			$("h1").live("click", changeSpacing); 
+			$("button").click(function() { 
+				$("h1").die("click", changeSize); 
+			}); 
+		}); 
+	</script> 
+</head> 
+
+<body> 
+	<div> 
+		<center> 
+			<h1>welcome to GFG</h1> 
+	</center> 
+	</div> 
+
+	<center> 
+		<button>click here</button> 
+	</center> 
+</body> 
+
+</html> 

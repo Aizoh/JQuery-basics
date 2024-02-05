@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!--
+    specify a function to be run when an AJAX request fails.
+    $(document).ajaxError( function(event, xhr, options, exc) )
+    Parameters: This method accepts single parameter function which is mandatory. This function accepts four parameters which are listed below:
+
+event: This parameter holds the event object.
+xhr: It holds the XMLHttpRequest object.
+options: It contains the used options in AJAX request.
+exc: It holds the JavaScript exception.
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+	<!-- Script to use ajaxError() method -->
+	<script>
+		$(document).ready(function () {
+			$(document).ajaxError(function () {
+				alert("AJAX request fails.");
+			});
+
+			$("button").click(function () {
+				$("#paragraph").load("demo.txt");
+			});
+		});
+	</script>
+</head>
+
+<body style="text-align:center;">
+
+	<div id="div_content">
+
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+
+		<p id="paragraph" style="font-size: 20px;">
+			A computer science portal for geeks
+		</p>
+	</div>
+
+	<button>
+		Change Content
+	</button>
+</body>
+
+</html>

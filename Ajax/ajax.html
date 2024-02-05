@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<!--Ajax() method is used to send Ajax requests or asynchronous HTTP requests to the servers
+for fetching and posting data according to the requirement by specifying the request type.
+$.ajax({name:value, name:value, ... })
+
+type: It is used to specify the type of the request as POST or GET.
+url: It is used to specify the URL to send the request to.
+username: It is used to specify a username to be used in an HTTP access authentication request.
+xhr: It is used for creating the XMLHttpRequest object.
+async: Its default value is true. It indicates whether the request should be handled asynchronously or not.
+beforeSend(xhr): It is a function that is to be run before the request is sent.
+dataType: The data type expected of the server response.
+error(xhr, status, error): It is used to run if the request fails.
+global: Its default value is true. It is used to specify whether or not to trigger global AJAX event handles for the request.
+ifModified: It’s default value is false. It is used to specify whether a request is only successful if the response has changed since the last request.
+jsonp: A string overriding the callback function in a jsonp request.
+jsonpCallback: It is used to specify a name for the callback function in a jsonp request.
+cache: It’s default value is true. It indicates whether the browser should cache the requested pages.
+complete(xhr, status): It is a function which is to be run when the request is being finished.
+contentType: It’s default value is: “application/x-www-form-urlencoded” and it is used when data send to the server.
+context: It is used to specify the “this” value for all AJAX related callback functions.
+data: It is used to specify data to be sent to the server.
+dataFilter(data, type): It is used to handle the raw response data of the XMLHttpRequest.
+password: It is used to specify a password to be used in an HTTP access authentication request.
+processData: It’s default value is true. It is used to specify whether or not data sent with the request should be transformed into a query string.
+scriptCharset: It is used to specify the charset for the request.
+success(result, status, xhr): It is to be run when the request succeeds.
+timeout: It is the local timeout for the request. It measured in terms of milliseconds.
+traditional: It is used to specify whether or not to use the traditional style of param serialization.
+-->
+<head>
+	<title>jQuery ajax() Method</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+
+<body style="text-align: center;">
+	<h1 style="color: green;">
+		GeeksForGeeks
+	</h1>
+	<h2>jQuery ajax() Method</h2>
+	<h3 id="h11"></h3>
+	<button>Get Message</button>
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				$.ajax({
+					url: "geeks.txt",
+                    type: "GET",
+					success: function (result) {
+						$("#h11").html(result);
+					},
+					error: function (xhr, status, error) {
+						console.log(error);
+					}
+				});
+			});
+
+			
+		});
+		/*$(document).ajaxComplete(function () {
+			alert("AJAX request completes.");
+		}); */
+	</script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<!--
+    check whether the elements with the specified class name exist or not.
+    $(selector).hasClass(className);
+    Parameter: It accepts a “className” parameter which specifies the class name needed to search in the selected element.
+
+Return Value: It returns true if the search is successful otherwise false.
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				alert($("p").hasClass("find"));
+			});
+		});
+	</script>
+	<style>
+		.find {
+			font-size: 120%;
+			color: green;
+		}
+
+		body {
+			width: 80%;
+			height: 200px;
+			padding: 20px;
+			display: flex;
+			justify-content: center;
+		}
+
+		div {
+			width: 600px;
+			height: 200px;
+			border: 2px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h1>Heading 1</h1>
+
+		<p class="find">
+			Geeks for Geeks !.
+		</p>
+		<p>
+			This is normal paragraph.
+		</p>
+
+		<button>Click me!</button>
+	</div>
+</body>
+
+</html>

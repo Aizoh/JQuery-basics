@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		jQuery jQuery.fx.interval Property
+	</title>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<!-- Script to illustrate jQuery.fx.interval
+        jQuery.fx.interval = milliseconds;
+        jQuery.fx.interval property in jQuery is used to modify the number of frames
+        per second at which animations will run and to change the animation firing rate in milliseconds. Its default value is 13ms.
+			property:This method accepts single parameter milliseconds which is mandatory.
+        -->
+	<script>
+		$(document).ready(function () {
+			$("#toggle").on("click", function () {
+				$("div").toggle(5000);
+			});
+
+			$("#interval").on("click", function () {
+				jQuery.fx.interval = 500;
+			});
+		});
+	</script>
+
+	<style>
+		.box {
+			background: green;
+			height: 100px;
+			width: 100px;
+			margin: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<center>
+		<h1 style="color:green;">
+			GeeksForGeeks
+		</h1>
+
+		<h2> jQuery.fx.interval property</h2>
+
+		<button id="toggle">
+			Toggle div
+		</button>
+
+		<button id="interval">
+			Run animation with less frames
+		</button>
+
+		<div class="box"></div>
+
+	</center>
+</body>
+
+</html>

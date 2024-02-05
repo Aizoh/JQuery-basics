@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<!--
+    used to set the default values for future AJAX requests
+    $.ajaxSetup( {name:value, name:value, ... } )
+    Parameters:
+
+type: It is used to specify the type of request.
+url: It is used to specify the URL to send the request to.
+username: It is used to specify a username to be used in an HTTP access authentication request.
+xhr: It is used for creating the XMLHttpRequest object.
+async: It’s default value is true. It indicates whether the request should be handled asynchronously or not.
+beforeSend(xhr): It is a function that is to be run before the request is sent.
+dataType: The data type expected of the server response.
+error(xhr, status, error): It is used to run if the request fails.
+global: It’s default value is true. It is used to specify whether or not to trigger global AJAX event handles for the request.
+ifModified: It’s default value is false. It is used to specify whether a request is only successful if the response has changed since the last request.
+jsonp: A string overriding the callback function in a jsonp request.
+jsonpCallback: It is used to specify a name for the callback function in a jsonp request.
+cache: It’s default value is true. It indicates whether the browser should cache the requested pages.
+complete(xhr, status): It is a function that is to be run when the request is finished.
+contentType: It’s default value is: “application/x-www-form-urlencoded” and it is used when data send to the server.
+context: It is used to specify the “this” value for all AJAX-related callback functions.
+data: It is used to specify data to be sent to the server.
+dataFilter(data, type): It is used to handle the raw response data of the XMLHttpRequest.
+password: It is used to specify a password to be used in an HTTP access authentication request.
+processData: It’s default value is true. It is used to specify whether or not data sent with the request should be transformed into a query string.
+scriptCharset: It is used to specify the charset for the request.
+success(result, status, xhr): It is to be run when the request succeeds.
+timeout: It is the local timeout for the request. It is measured in terms of milliseconds.
+traditional: It is used to specify whether or not to use the traditional style of param serialization.
+-->
+<head>
+	<title>jQuery ajaxSetup() Method</title>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+    <script>
+        $(document).ready(function () {
+            $("li:parent").css("background-color", "green");
+        });
+    </script>
+</head>
+ 
+<body style="text-align:center;">
+ 
+    <h1 id="geeks1" style="color:green">
+        GeeksForGeeks
+    </h1>
+    <h2 id="geeks2">
+        jQuery ajaxSetup() Method
+    </h2>
+ 
+    <button class = "not">Find Me I don't Exist</button>
+    <button class = "yes">Find Me I Exist</button>
+ 
+    <!-- Script to use jQuery ajaxSetup() Method -->
+    <script>
+        $(document).ready(function () {
+            $(".not").click(function () {
+                $.ajaxSetup({
+                    url: "geek2_dat.txt", 
+                    error: function (xhr) {
+                        alert("Error: " + xhr.status + " " + xhr.statusText);
+                    },
+                    success: function(results){
+                        $("#geeks2").html(results);
+                    }
+                });
+                $.ajax();
+            });
+
+            $(".yes").click(function () {
+                $.ajaxSetup({
+                    url: "geeks.txt", 
+                    error: function (xhr) {
+                        alert("Error: " + xhr.status + " " + xhr.statusText);
+                    } ,
+                    success: function(results){
+                        $("#geeks2").html(results);
+                    }
+                });
+                $.ajax();
+            });
+        });
+    </script>
+</body>
+ 
+</html>

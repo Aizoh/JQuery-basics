@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!--
+    $(selector).attr(attribute) - return the value of an attribute:
+    $(selector).attr(attribute, value) - set the attribute and value
+    $(selector).attr(attribute, function(index, currentvalue))- set attribute and value using a function:
+    $(selector).attr({attribute:value, attribute:value, ...}) - set multiple attributes and values:
+
+-->
+<html>
+
+<head>
+	<title>jQuery attr() Method
+	</title>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+
+<body>
+	<center>
+		<h1 style="color:green;">
+			GeeksForGeeks
+		</h1>
+
+		<h2> jQuery attr() Method</h2>
+		<h3 style="color:lightgreen;"></h3>
+		<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20190221153831/1132.png"
+			alt="" width="120" height="300"
+			class="alignnone size-medium wp-image-915678" />
+		<br><br>
+		<button class="btn1" >Btn1</button>
+        <button class="btn2" >Btn2</button>
+        <button class="btn3" >Btn3</button>
+        <button class="btn4" >Btn4</button>
+
+		<script>
+			$(document).ready(function () {
+                
+				$(".btn1").click(function () {
+					$("img").attr({
+						width: "150",
+						height: "100"
+					});
+				});
+
+                $(".btn2").click(function () {
+                    alert("Image width is: " + $("img").attr("width"));
+				});
+
+                $(".btn3").click(function () {
+					$("img").attr("width", "300");
+				});
+
+                $(".btn4").click(function () {
+					$("img").attr("width", function (n, v) {
+                        return v - 50;
+                    });
+				});
+
+			});
+		</script>
+	</center>
+</body>
+
+</html>

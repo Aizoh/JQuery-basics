@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<!--
+    used to set or return the innerHTML content of the selected element. 
+    $(selector).html() - returns the content of the first matched element.
+    $(selector).html(content) - sets the content of the matched element.
+    $(selector).html(function(index, currentcontent)) - sets the content using a function.
+-->
+<head>
+	<title>
+		jQuery html() Method
+	</title>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+	
+<body style = "text-align:center;">
+	<h1 style = "color:green;" >
+		GeeksForGeeks
+	</h1>
+	<h2>
+		jQuery | html() Method
+	</h2>
+    <button class="btn1">return</button>
+    <button class="btn2">set</button>
+	<button class="btn3">set by function</button>
+	
+	<!-- Script to set the content -->
+	<script>
+		$(document).ready(function() {
+
+            $(".btn1").click(function() {
+				alert($("h2").html());
+			});
+
+            $(".btn2").click(function() {
+                $("h2").html("Hello <b>GEEKS!</b>");
+
+			});
+
+			$(".btn3").click(function() {
+				$("h2").html(function(n) {
+					return "jQuery | html() Method"
+							+ " has index: " + n;
+				});
+			});
+		});
+	</script>
+</body>
+</html>

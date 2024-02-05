@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<!--
+    to run a JavaScript using AJAX HTTP GET request.
+    $(selector).getScript(url, success(response, status))
+    parameters: It contains two parameters as mentioned above and described below:
+
+    url: It is a required parameter. It holds the url to whom the request is sent to.
+    success(response, status): It is an optional parameter. It holds the function to run if the request got successful.
+    response: It holds the result data from the request.
+    status: It holds the status of the request like- “success”, “notmodified”, “error”, “timeout”, or “parsererror”
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				$.getScript("test.js",
+                    alert("JavaScript Received "));
+			});
+		});
+	</script>
+</head>
+
+<body style="text-align:center;">
+
+	<h1 style="color: green;">
+		GeeksforGeeks
+	</h1>
+
+	<p id="paragraph" style="font-size: 20px;">
+		A computer science portal for geeks
+	</p>
+
+	<button>
+		Get JavaScript using an AJAX HTTP GET request.
+	</button>
+</body>
+
+</html>

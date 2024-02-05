@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<!--
+    create a serialized representation of an object.
+    $.param( object, trad )
+    Parameters: This method accepts two parameters as mentioned above and described below:
+
+    object: It is a mandatory parameter that is used to specify an array or object to serialize.
+    trad: It is an optional parameter and is used to specify whether or not to use the traditional style of param serialization.
+    -->
+<head>
+	<title>
+		jQuery param() Method
+	</title>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+</head>
+
+<body style="text-align:center;">
+
+	<h1 style="color:green;">
+		GeeksForGeeks
+	</h1>
+
+	<h2>jQuery param() method</h2>
+
+	<button>Click</button>
+
+	<div></div>
+
+	<!-- Script using param() method -->
+	<script>
+		$(document).ready(function () {
+
+			personObj = new Object();
+
+			personObj.Firstword = "Geeks";
+			personObj.Secondword = "For";
+			personObj.Thirdword = "Geeks";
+			personObj.Wordcolor = "Green";
+
+			$("button").click(function () {
+				$("div").text($.param(personObj));
+			});
+		});
+	</script>
+</body>
+
+</html>

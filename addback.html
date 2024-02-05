@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<!--
+    adds the previous set of elements to the current set. 
+    .addBack(selector)
+    Parameters: It accepts an optional parameter “selector”.
+    Returns the added element against the specified selector.
+-->
+<head>
+	<style>
+		p,
+		div {
+			margin: 5px;
+			padding: 5px;
+		}
+
+		div {
+			border: 2px solid green;
+		}
+
+		.border {
+			border: 2px solid green;
+		}
+
+		.background {
+			background: lightgreen;
+			border: 2px solid green;
+		}
+
+		.left,
+		.right {
+			width: 45%;
+			float: left;
+		}
+
+		.right {
+			margin-left: 3%;
+		}
+	</style>
+	<script src=
+"https://code.jquery.com/jquery-1.10.2.js">
+	</script>
+</head>
+
+<body>
+	<div class="left">
+		<p>
+			<strong>Before
+				<code>addBack()</code>
+			</strong>
+		</p>
+		<div class="before">
+			<p>First Paragraph</p>
+			<p>Second Paragraph</p>
+		</div>
+	</div>
+	<div class="right">
+		<p>
+			<strong>After
+				<code>addBack()</code>
+			</strong>
+		</p>
+		<div class="after">
+			<p>First Paragraph</p>
+			<p>Second Paragraph</p>
+		</div>
+	</div>
+	<script>
+		$(".before").find("p").addClass(
+			"background");
+		$(".after").find("p").addBack().addClass(
+			"background");
+	</script>
+</body>
+
+</html>
+

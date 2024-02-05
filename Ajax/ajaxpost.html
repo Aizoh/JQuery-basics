@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html> 
+	<!--
+        loads the page from server using POST HTTP request and returns XMLHttpRequest object.
+         $.post( url, data, callback_function, data_type )
+        Parameters: This method accepts four parameters as mentioned above and described below:
+
+        url: It is the required parameter and used to send the request.
+        data: It is optional parameter and it represents key/value pairs of data that will be sent to the server.
+        callback_function: It is optional parameter and it represents a function to be executed when the data is loaded successfully.
+        data_type: It is optional parameter and it represents a type of data to be returned to callback function: xml, html, script, json, jsonp, or text
+    -->
+<head> 
+	<title> 
+		jQuery post() Method 
+	</title> 
+	
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+	</script> 
+</head> 
+
+<body> 
+	<h2 id="gfg">GeeksforGeeks</h2> 
+	
+	<button id="b"> 
+		Click Here! 
+	</button> 
+	
+	<!-- Script to use post() method -->
+	<script> 
+		$(document).ready(function() { 
+			$("button").click(function() { 
+				$.post("/submit.php", { 
+					name: "GFG", 
+				}, 
+				
+				function(data,status) { 
+					document.getElementById("gfg").innerHTML 
+							= data; 
+					document.getElementById("b").innerHTML 
+							= "Data Passed"; 
+				}); 
+			}); 
+		}); 
+	</script> 
+</body> 
+
+</html> 

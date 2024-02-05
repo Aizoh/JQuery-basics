@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<!--
+    returns all the direct children, including text and comment nodes for the selected element.
+    $(selector).contents()
+    Parameter: It does not accept any parameter.
+
+Return Value: It returns all the direct children elements of the selected element.
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+			//jQuery code to perform this method
+			$("button").click(function () {
+				$("div").contents().filter("p").wrap("<b/>");
+			});
+		});
+	</script>
+	<style>
+		#p1 {
+			width: 420px;
+			padding: 50px;
+			display: block;
+			border: 2px solid green;
+			font-size: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<!-- This paragraph will get bold after click on
+			the button -->
+		<p id="p1">Welcome to GeeksforGeeks !!!</p>
+	</div>
+	<!-- click on this button -->
+	<button>Click Me!</button>
+	<br>
+</body>
+
+</html>

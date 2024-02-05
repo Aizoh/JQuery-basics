@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+	</script> 
+	<script> 
+	
+			$(document).ready(function () { 
+				$(".b1").click(function () { 
+					$("p").animate({ 
+						borderRightWidth: "5px" 
+					}); 
+					$("p").animate({ 
+						borderTopWidth: "5px" 
+					}); 
+					$("p").animate({ 
+						borderLeftWidth: "5px" 
+					}); 
+					$("p").animate({ 
+						borderBottomWidth: "5px" 
+					}); 
+				}); 
+				$(".b2").click(function () { 
+					$("p").clearQueue(); 
+				}); 
+			}); 
+	</script> 
+	<style> 
+		p { 
+			display: block; 
+			width: 150px; 
+			border: 1px solid green; 
+			padding: 10px; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+	<p>This is a paragraph.</p> 
+	<!-- click on this button to start the animation -->
+	<button class="b1">Start</button> 
+	<!-- click on this button to stop the animation 
+			at given situation -->
+	<button class="b2">Stop</button> 
+</body> 
+
+</html>

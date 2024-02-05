@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<!--
+    $(selector).empty()
+    remove all child nodes and their content for the selected elements.
+    Parameter: This method does not accept any parameter.
+
+Return Value: This method returns the selected element with the specified changes made by the empty() method.
+
+
+-->
+<head>
+	<title>The empty Method</title>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+	<!-- jQuery code to show the working of this method -->
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				$("body").empty();
+			});
+		});
+	</script>
+	<style>
+		div {
+			width: 200px;
+			height: 100px;
+			margin: 10px;
+			padding: 20px;
+			background-color: lightgreen;
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		button {
+			margin: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		Hello !
+		<p>
+			Welcome to 
+			<span>GeeksforGeeks</span>.
+		</p>
+	</div>
+	<!-- click on this button to see the change -->
+	<button>Click here..!</button>
+</body>
+
+</html>

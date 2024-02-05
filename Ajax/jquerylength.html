@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<!--
+    $(selector).length
+The length property is used to count a number of the elements of the jQuery object.
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				document.getElementById("Geeks").innerHTML =
+					"<br>" + $("p").length
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<p style="color:green"> GeeksforGeeks</p>
+	<p style="color:green">Sudo</p>
+	<p style="color:green">Code</p>
+	<p style="color:green">Gate</p>
+
+	<button>Click on the button to get
+		the number of "p" elements
+	</button>
+
+	<div id="Geeks"></div>
+
+</body>
+
+</html>

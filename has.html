@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!--
+    find all the elements inside the specified list of elements. 
+    $(selector).has(element)
+    Parameter: It accepts a parameter expression or an element to match elements against them. 
+    Return Value: It returns all elements that match the specified selector having one or more elements inside them. 
+
+    $(document).ready(function () {
+			$("p").has("span").css(
+				"background-color", "lightgreen", "bold");
+		});
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<!-- jQuery code to show the working of this method -->
+	<script>
+		$(document).ready(function () {
+            $("p:has(span)").find("span").css({
+                "background-color": "lightgreen",
+                "font-weight": "bold"
+            });
+        });
+        
+	</script>
+	<style>
+		body {
+			width: 50%;
+			height: 100px;
+			border: 2px solid green;
+			padding: 15px;
+			font-size: 19px;
+		}
+	</style>
+</head>
+
+<body>
+	<p>
+		Geeks
+		<span>for</span>
+		Geeks !
+	</p>
+
+	<p>
+		I am a
+		<span>content</span>
+		writer.
+	</p>
+
+	<p>
+		This is a normal paragraph .
+	</p>
+</body>
+
+</html>

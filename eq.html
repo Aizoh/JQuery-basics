@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<!--
+     locate the selected elements directly and returns an element with a specific index. 
+     $(selector).eq(index)
+     Parameters: Here the parameter “index” specifies the index of the element.
+Can either be positive or a negative number. 
+-->
+<head>
+	<title>GeeksForGeeks articles</title>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".heading").eq(0).css("color", "red");
+			$(".heading").eq(2).css("color", "yellow");
+		});
+	</script>
+</head>
+
+<body>
+	<h1 class="heading">GeeksForGeeks</h1>
+	<h2 class="heading">GeeksForGeeks</h2>
+	<h3 class="heading">GeeksForGeeks</h3>
+	<h4 class="heading">GeeksForGeeks</h4>
+</body>
+
+</html>

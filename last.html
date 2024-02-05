@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<!--
+    find the last element of the specified elements.
+    $(selector).last()
+    Parameters: It does not accept any parameter.
+    Return value: It returns the last element out of the selected elements.
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+			$(".main").last().css(
+				"background-color", "red");
+            $("p").last().css("background-color", "lightgreen");
+
+		});
+	</script>
+</head>
+
+<body>
+	<h1>Welcome to GeeksforGeeks !!!</h1>
+	<div class="main"
+		style="border: 1px solid green;">
+		<p>This is the First.</p>
+	</div>
+	<br>
+	<div class="main"
+		style="border: 1px solid green;">
+		<p>This is the Second.</p>
+	</div>
+	<br>
+	<div style="border: 1px solid green;">
+		<p>This is the Third.</p>
+	</div>
+	<br>
+</body>
+
+</html>

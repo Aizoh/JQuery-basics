@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!--
+    Takes a well-formed JSON string and returns the resulting JavaScript value.
+    jQuery.parseJSON( json )
+-->
+<head>
+	<meta charset="utf-8">
+	<title>JQuery | parseJSON() method</title>
+	<script src=
+"https://code.jquery.com/jquery-3.4.1.js">
+
+	</script>
+	<style>
+		#a {
+			color: blue;
+		}
+
+		#b {
+			color: red;
+		}
+
+		h1 {
+			color: green;
+		}
+
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>
+		GeeksForGeeks
+	</h1>
+
+	<h3>JQuery | parseJSON() method</h3>
+	<b id="a"></b>
+
+	<script>
+		let txt = '{"name":"John", "age":30, "city":"New York"}'
+		let obj = jQuery.parseJSON(txt);
+		document.getElementById("a").innerHTML =
+			"Object Name : " + obj.name +
+			"<br> Object Age : " + obj.age;
+	</script>
+</body>
+
+</html>

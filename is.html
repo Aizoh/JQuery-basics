@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<!--
+    check if one of the selected elements matches the selectorElement
+    $(selector).is(selectorElement, function(index, element))
+    selector: It is an optional parameter. It specifies the selector from which the event will remove.
+selectorElement: It is a required parameter that specifies a selector expression, element, or jQuery object to match the current set of elements against. It returns true if there is at least one match from the given argument, and false if not.
+function(index, element): It is an optional parameter that specifies a function to run for the group of selected elements.
+index: the index position of the element
+element: the current element (the “this” selector can also be used)
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+			$("p").click(function () {
+				if ($("p").parent().is("div")) {
+					alert("Parent of p is div");
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<center>
+		<h1>GeeksforGeeks</h1>
+		<div>
+			<p>Click me to find out if
+				I my parent is a div element.
+			</p>
+		</div>
+	</center>
+</body>
+
+</html>

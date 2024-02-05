@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!--
+    returns the first ancestor of the selected element in the DOM tree.
+    $(selector).closest(para1, para2);
+    para1: This specifies the element to narrate the ancestor search in the DOM tree.
+    para2: This is an optional parameter DOM element within which a matching element is found.
+    Return Value: It returns the first ancestor for the selected element.
+
+
+-->
+<head>
+	<style>
+		.main * {
+			display: block;
+			border: 2px solid lightgrey;
+			color: grey;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+
+            
+			//Here among dom id first ancestor will select
+			let item = document.getElementById("dom");
+			$("li").closest("ul", item).css({
+				"color": "green",
+				"border": "2px solid green"
+			});
+		});
+	</script>
+</head>
+
+<body class="main">
+	This is great-great-grandparent !
+	<div style="width:500px;">
+		div (great-grandparent)
+		<ul id="dom">
+			This is second ancestor !
+			<ul id="dom">
+				This is first ancestor !
+				<li>This is direct parent !
+					<span>
+						This is span the child one !
+					</span>
+				</li>
+			</ul>
+		</ul>
+	</div>
+</body>
+
+</html>

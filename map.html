@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<!--
+    translate all items in an array or object to a new array of items.
+    jQuery.map( array/object, callback )
+    Parameters: This method accepts two parameters which are mentioned above and described below:
+
+array/object: This parameter holds the Array or object to translate.
+callback: This parameter holds the function to process each item against.
+Return Value: It returns the array.
+-->
+<head>
+	<meta charset="utf-8">
+	<title>JQuery | map() method</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js">
+	</script>
+
+</head>
+
+<body style="text-align:center;">
+
+	<h1 style="color: green">
+		GeeksforGeeks
+	</h1>
+
+	<h3>JQuery | map() method</h3>
+	<b>Array = [2, 5, 6, 3, 8, 9]</b>
+
+
+	<br>
+	<br>
+
+    <h3>JQuery | map() method</h3>
+    <b>String = "Shubham"</b>
+    <br>
+	<button onclick="geek()">
+		Click geek
+	</button>
+    <button onclick="geeked()">
+		Click geeked
+	</button>
+	<br>
+	<br>
+	<b id="root1"></b>
+    <b id="root2"></b>
+	<script>
+		function geek() {
+			let el = document.getElementById('root1');
+			let arr = [2, 5, 6, 3, 8, 9];
+
+			let newArr = jQuery.map(arr, function (val, index) {
+				return {
+					number: val,
+					square: val * val
+				};
+			})
+			el.innerHTML = JSON.stringify(newArr);
+		}
+
+        function geeked() {
+            let el = document.getElementById('root2');
+            let name = "Shubham";
+            name = name.split("");
+ 
+            // New array of character and names
+            // concatenated with 'A'
+            let newName = jQuery.map(name, function (item) {
+                return item + 'A<br>';
+            })
+            el.innerHTML = newName;
+        }
+	</script>
+
+</body>
+
+</html>

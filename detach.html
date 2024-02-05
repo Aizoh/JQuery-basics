@@ -1,0 +1,41 @@
+<html>
+<!--
+    $(selector).detach()
+    Parameter: It does not accept any parameter.
+
+Return Value: It returns the selected element with all removed texts and child nodes.
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		//jQuery code to show detach method working
+		$(document).ready(function () {
+			$("button").click(function () {
+				$("p").detach();
+			});
+		});
+	</script>
+	<style>
+		body {
+			display: block;
+			width: 400px;
+			height: 250px;
+			padding: 20px;
+			border: 2px solid green;
+			font-size: 25px;
+		}
+	</style>
+</head>
+
+<body>
+	<div> This is the div part !</div>
+	<br>
+	<!-- This paragraphs get detached -->
+	<p>This is the first paragraph !</p>
+	<p>This is the second paragraph !</p>
+	<button>Detach paragraph!</button>
+</body>
+
+</html>

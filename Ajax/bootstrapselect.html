@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<!--
+Please download the jQuery bootstrapSelect plugin in the working folder and include the required files in the head section of your HTML code.
+-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible"
+		content="ie=edge">
+
+	<title>jQuery Bootstrap Multiple choice Dropdown Plugin</title>
+
+	<meta name="description" content="">
+	<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="bootstrapSelect.css">
+
+	<style>
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+		}
+
+		#containerID {
+			width: 90%;
+			padding-top: 20px;
+			padding-left: 20px;
+
+		}
+
+		.science {
+			color: #0099aa;
+		}
+
+		.maths {
+			color: #00aaaa;
+		}
+
+		.computers {
+			color: #aa9900;
+		}
+
+		.literature {
+			color: #2a00aa;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Bootstrap Multiple choice Dropdown Plugin</h2>
+
+	<div id="containerID">
+		<div id="bootstrapSelectZone"
+			style="max-width:600px;width:600px;">
+			<div>
+				<label>Choose multiple subjects</label><br />
+				<select id="selectMultipleID"
+						size="3" multiple="">
+					<option class="science"
+							value="science">
+						Science</option>
+					<option class="maths"
+							value="maths">
+						Maths</option>
+					<option class="computers"
+							value="computers">
+						Computers</option>
+					<option class="literature"
+							value="literature">
+						Literature</option>
+					<option value="cooking">
+						Cooking
+					</option>
+					<option value="painting">
+						Painting
+					</option>
+					<option value="reading">
+						Reading
+					</option>
+					<option value="photography">
+						Photography
+					</option>
+					<option value="writing">
+						Writing
+					</option>
+					<option value="gyming">
+						Gyming
+					</option>
+				</select>
+			</div>
+			<br />
+			<button type="button"
+					id="btnBootstrapID"
+					class="btn btn-sm btn-default">
+				Bootstrap
+			</button>
+
+			<button type="button"
+					id="btnEmptyID"
+					class="btn btn-sm btn-default">
+				Empty selection
+			</button>
+			<button type="button"
+					id="btnDisableID"
+					class="btn btn-sm btn-default">
+				Disable
+			</button>
+			<button type="button"
+					id="btnEnableID"
+					class="btn btn-sm btn-default">
+				Enable
+			</button>
+			<button type="button"
+					id="btnSetID"
+					class="btn btn-sm btn-default">
+				SetValue("science,maths,literature")
+			</button>
+			<button type="button"
+					id="btnDestroyID"
+					class="btn btn-sm btn-danger">
+				Destroy
+			</button>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js">
+		</script>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+		</script>
+		<script src="bootstrapSelect.js"></script>
+
+		<script>
+			$(document).ready(function () {
+
+				// Initially hiding all the buttons
+				$("#btnHideID").hide();
+				$("#btnShowID").hide();
+				$("#btnEmptyID").hide();
+				$("#btnDisableID").hide();
+				$("#btnEnableID").hide();
+				$("#btnSetID").hide();
+				$("#btnEmptyID").hide();
+				$("#btnDestroyID").hide();
+
+				$("#btnBootstrapID").on("click", function () {
+					$("#selectMultipleID").bootstrapSelect
+						(
+							"init",
+							{
+								"maxWidth": 460, "maxHeight": 300,
+								"search": true, "placeHolder": "Select anything >> "
+							}
+						);
+					$("#btnBootstrapID").hide();
+					$("#btnHideID").show();
+					$("#btnEmptyID").show();
+					$("#btnDisableID").show();
+					$("#btnSetID").show();
+					$("#btnDestroyID").show();
+
+				});
+				$("#btnHideID").on("click",
+					function () {
+						$("#selectMultipleID").bootstrapSelect(
+							"hideOption", "cooking");
+						$("#btnHideID").hide();
+						$("#btnShowID").show();
+					});
+				$("#btnShowID").on("click",
+					function () {
+						$("#selectMultipleID").bootstrapSelect(
+							"showOption", "cooking");
+						$("#btnHideID").show();
+						$("#btnShowID").hide();
+					});
+				$("#btnEmptyID").on("click",
+					function () {
+						$("#selectMultipleID").bootstrapSelect("empty");
+					});
+				$("#btnDisableID").on("click",
+					function () {
+						$("#selectMultipleID").bootstrapSelect("disable");
+						$("#btnEnableID").show();
+						$("#btnDisableID").hide();
+					});
+				$("#btnEnableID").on("click",
+					function () {
+						$("#selectMultipleID").bootstrapSelect("enable");
+						$("#btnEnableID").hide();
+						$("#btnDisableID").show();
+					});
+				$("#btnSetID").on("click",
+					function () {
+						$("#selectMultipleID").bootstrapSelect
+							("setValue", "science,maths,literature");
+					});
+
+				$("#btnDestroyID").on("click",
+					function () {
+						$("#selectMultipleID").bootstrapSelect("destroy");
+						$("#selectMultipleID").show();
+						$("#btnBootstrapID").show();
+						$("#btnHideID").hide();
+						$("#btnEmptyID").hide();
+						$("#btnDisableID").hide();
+						$("#btnSetID").hide();
+						$("#btnDestroyID").hide();
+					});
+
+			});
+		</script>
+	</div>
+</body>
+
+</html>

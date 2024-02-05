@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<!--
+    specify a function to be run when an AJAX request completes.
+    $(document).ajaxComplete(function(event, xhr, options))
+Parameter:
+
+event: It contains the event object.
+xhr: It contains the XMLHttpRequest object.
+options: It contains the used options in AJAX request.
+-->
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+			$(document).ajaxComplete(function () {
+				alert("AJAX request completes.");
+			});
+			$("button").click(function () {
+				$("h1").load("geeks.txt");
+			});
+		});
+	</script>
+	<style>
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div_content">
+		<h1 style="color: green;">
+			GeeksforGeeks
+		</h1>
+		<p id="paragraph" style="font-size: 20px;">
+			A computer science portal for geeks
+		</p>
+	</div>
+	<button>Change Content</button>
+</body>
+
+</html>

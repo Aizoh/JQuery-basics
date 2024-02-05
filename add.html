@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<!--
+    used to add elements to the existing group of elements. This method can add element to the whole document, 
+    or just inside the context element if the context parameter is defined.
+    $(selector).add(element, context_parameter)
+    Parameters: It accepts two parameters that are specified below:
+    element: It is the selected element.
+context_parameter: It is the context parameter of the element defined.
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+			$(".heading").add("#para1").add("#span1").
+				css("background-color", "lightgreen");
+		});
+	</script>
+</head>
+
+<body>
+	<p style="color:green" class="heading">
+		Welcome to GfG!!!
+	</p>
+	<p style="color:green" id="para1">
+		Welcome to GeeksforGeeks !!!
+	</p>
+	<span style="color:green" id="span1">
+		Article 1 !!!.
+	</span>
+	<div>This example adds the same css style 
+		for both "p" and "span" elements, 
+		using its class and id name!!!
+	</div>
+</body>
+
+</html>

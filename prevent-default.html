@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+ 
+<head>
+    <title>
+        isPreventDefault() Method
+    </title>
+    <script src=
+"https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+</head>
+ 
+<body>
+ 
+    <form action="action.php">
+        Input:<br>
+        <input type="text" name="input_1">
+        <button type="submit">Submit</button>
+    </form>
+ 
+    <!-- Script to describe isDefaultPrevented() Method -->
+    <script>
+        $("button").click(function (event) {
+            if (event.isDefaultPrevented())
+                alert('Default action was prevented');
+            else
+                alert('Click Ok');
+ 
+            event.preventDefault();
+ 
+            if (event.isDefaultPrevented())
+                alert('Default action was prevented');
+            else
+                alert('Click Ok');
+        });
+    </script>
+</body>
+ 
+</html>

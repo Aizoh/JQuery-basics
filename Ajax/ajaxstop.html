@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<!--
+    specify a function to be run when an AJAX request compleytes.
+	$(document).ajaxStop(function())
+    Parameter: It takes only one parameter.
+
+function(): It specifies the function to run when the Ajax requests have been completed.
+
+-->
+<head>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+        $(document).ready(function () {
+            $(document).ajaxStop(function () {
+                alert(
+                    "AJAX request stopped");
+            });
+            $("button").click(function () {
+                $("#paragraph").load(
+                    "geeks.txt");
+            });
+        });
+    </script>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div id="div_content">
+        <h1 style="color: green;">
+            GeeksforGeeks
+        </h1>
+        <p id="paragraph" style="font-size: 20px;">
+            A computer science portal for geeks
+        </p>
+    </div>
+    <button>
+        Change Content
+    </button>
+</body>
+ 
+</html>
+</html>

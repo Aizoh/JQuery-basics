@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<!--
+    find all the child elements of the selected element.
+    $(selector).children()
+    Parameter:
+It accepts an optional parameter that specifies the child selector to filter a particular child from all the children elements.
+
+Return values:
+By default, it returns all the children of the selected element.
+-->
+<head>
+	<style>
+		.parent * {
+			display: block;
+			border: 2px solid lightgrey;
+			color: grey;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+            $(".btn1").click(function(){
+                $("div").children().css({
+                    "color": "green",
+                    "border": "2px solid green"
+                });
+            });
+
+            $(".btn2").click(function(){
+                $("div").children("p.first").css({
+                    "color": "green",
+                    "border": "2px solid green"
+                });
+            });
+
+			
+		});
+	</script>
+</head>
+
+<body>
+
+	<div class="parent" style="width:500px;">
+		This is the current element !!!
+		<p class="first">This is first children
+			<span>This is grandchild</span>
+		</p>
+		<p>This is Second children
+			<span>This is grandchild</span>
+		</p>
+        <button class="btn1">General</button>
+        <button class="btn2">Child parameter</button>
+	</div>
+
+</body>
+
+</html>

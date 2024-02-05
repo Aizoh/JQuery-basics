@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The event.data property</title>
+	<script src=
+"https://code.jquery.com/jquery-3.3.1.js">
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#ClickMe').on('click', {
+				msg: 'GFG says hi to',
+				name: 'John Doe'
+			}, sayHello);
+
+			$('#ClickMe').on('click', {
+				msg: 'GFG says Hi!!'
+			}, sayHello);
+
+			$('#ClickMe').on('click', sayHello);
+
+			function sayHello(event) {
+				if (event.data == null) {
+					alert('No name or msg provided');
+				} else {
+					alert('Hello ' + event.data.msg +
+						(event.data.name != null ? ' '
+							+ event.data.name : ''));
+				}
+			}
+		});
+	</script>
+</head>
+
+<body style="font-family:Arial">
+	<input id="ClickMe" type="button" value="Click Me" />
+</body>
+
+</html>

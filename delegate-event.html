@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		jQuery event.delegateTarget Property
+	</title>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$("div").on("click", function (event) {
+					$(event.delegateTarget).animate({ fontSize: "+=14px"});
+				});
+		});
+	</script>
+</head>
+
+<body>
+	<center>
+		<div style="border: 2px solid black">
+			<h1>GeeksForGeeks</h1>
+			<h2 id="geeks2" style="color: green">
+				A computer science portal
+			</h2>
+		</div>
+	</center>
+</body>
+
+</html>
+

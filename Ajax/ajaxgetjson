@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!--
+    fetches JSON-encoded data from the server using a GET HTTP request.
+    $(selector).getJSON(url,data,success(data,status,xhr))
+    Parameters: This method accepts three parameters as mentioned above and described below:
+
+    url: It is a required parameter. It is used to specify the URL in the form of a string to which the request is sent
+    data: It is an optional parameter that specifies data that will be sent to the server.
+    callback: It is also an optional parameter that runs when the request succeeds.
+
+Return Value: It returns XMLHttpRequest object.
+
+-->
+<head>
+	<title>jQuery getJSON() Method</title>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+	<!-- Script to get JSON file and display its content -->
+	<script type="text/javascript" language="javascript">
+		$(document).ready(function () {
+			$("#fetch").click(function (event) {
+				$.getJSON('https://dummyjson.com/users/1', function (emp) {
+					$('#display').html('<p> Name: ' + emp.maidenName + '</p>');
+					$('#display').append('<p>Age : ' + emp.age + '</p>');
+					$('#display').append('<p> Gender: ' + emp.gender + '</p>');
+					$('#display').append('<p> department: '
+						+ emp.company['department']
+						+ '</p>');
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<p> Click on the button to fetch employee data </p>
+
+	<div id="display"
+		style="background-color:#39B54A;">
+	</div>
+	<input type="button"
+		id="fetch"
+		value="Fetch Employee Data" />
+</body>
+
+</html>

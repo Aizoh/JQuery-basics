@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+	</script> 
+	
+	<!-- jQuery code to show the working of this method -->
+	<script> 
+		$(document).ready(function () { 
+			$("button").click(function () { 
+				$("p").fadeTo(2000, 0.2, function () { 
+					$("p").replaceWith("<p>The fadeTo effect has finished!</p>"); 
+				}); 
+			}); 
+		}); 
+	</script> 
+	<style> 
+		body { 
+			width: 40%; 
+			height: 100px; 
+			border: 2px solid green; 
+			padding: 20px; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+	
+	<!-- This paragraph will fade out -->
+	<p>This is a paragraph.</p> 
+
+	<!-- Click on this button and 
+		paragraph will fade out -->
+	<button>Click me</button> 
+</body> 
+
+</html>

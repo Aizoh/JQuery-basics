@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<!--
+    jQuery.support.propvalue
+    contains a collection of properties that are used to represent the different browser features or bugs.
+    Parameters: This property contains a single parameter
+
+propvalue: which is required. It is used to specify the function to test for. The tests included are:
+ajax
+boxModel
+changeBubbles
+checkClone
+checkOn
+cors
+cssFloat
+hrefNormalized
+htmlSerialize
+leadingWhitespace
+noCloneChecked
+noCloneEvent
+opacity
+optDisabled
+optSelected
+scriptEval()
+style
+submitBubbles
+tbody
+-->
+<head>
+	<title>
+		jQuery jQuery.support property
+	</title>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+	</script>
+	<script>
+		$(document).ready(function () {
+			$.support.cors = false;
+			$("h3").html(" Previous Example statement is not"
+				+ " correct : " + jQuery.support.cors);
+		});
+	</script>
+</head>
+
+<body>
+	<center>
+		<h1 style="color:green;">
+			GeeksForGeeks
+		</h1>
+
+		<h2>jQuery jQuery.support property</h2>
+
+		<h3 style="color:lightgreen;"></h3>
+	</center>
+</body>
+
+</html>
